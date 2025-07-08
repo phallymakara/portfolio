@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/app_text_styles.dart';
 import 'package:portfolio/extension.dart';
-import 'package:portfolio/l10n/app_localizations.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Applogo(),
-        Spacer(),
-        AppMenu(),
-        Spacer(),
-        LanguageToggle(),
-        ThemeToggle(),
-      ],
+    return Container(
+      color: Theme.of(context).appBarTheme.backgroundColor,
+      child: Row(
+        children: [
+          Applogo(),
+          Spacer(),
+          AppMenu(),
+          Spacer(),
+          LanguageToggle(),
+          ThemeToggle(),
+        ],
+      ),
     );
   }
 }
