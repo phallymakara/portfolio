@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/app_text_styles.dart';
+import 'package:portfolio/constant/app_menu_list.dart';
 import 'package:portfolio/extension.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widget/appBar/app_bar_drawer_icon.dart';
@@ -48,12 +50,43 @@ class LargeAppMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        Text(context.texts.home),
-        Text(context.texts.skills),
-        Text(context.texts.blog),
-        Text(context.texts.aboutme),
-      ],
+      children:
+          AppMenuList.getItems(context)
+              .map(
+                (AppMenu e) => LargeAppBarMenuItem(
+                  text: e.title,
+                  isSelected: true,
+                  onTap: () {}, // you can update this to navigate
+                ),
+              )
+              .toList(),
+    );
+  }
+}
+
+class LargeAppBarMenuItem extends StatelessWidget {
+  const LargeAppBarMenuItem({
+    super.key,
+    required this.text,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  final String text;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: Insets.med,
+          vertical: Insets.xs,
+        ),
+        child: Text(text, style: SmallTextStyles().bodyLgMedium),
+      ),
     );
   }
 }
