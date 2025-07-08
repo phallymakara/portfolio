@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/extension.dart';
 import 'package:portfolio/style/app_size.dart';
+import 'package:portfolio/widget/appBar/app_bar_drawer_icon.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       color: Theme.of(context).appBarTheme.backgroundColor,
+      alignment: Alignment.center,
       height: context.insets.appBarHeight,
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
 
+      duration: const Duration(milliseconds: 200),
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: Insets.maxWidth),
         child: Row(
           children: [
             Applogo(),
             Spacer(),
-            AppMenu(),
+            if (context.isDesktop) AppMenu(),
             Spacer(),
             LanguageToggle(),
             ThemeToggle(),
+            if (!context.isDesktop) AppBarDrawerIcon(),
           ],
         ),
       ),
