@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/extension.dart';
+import 'package:portfolio/style/app_size.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
@@ -10,15 +11,19 @@ class MyAppbar extends StatelessWidget {
       color: Theme.of(context).appBarTheme.backgroundColor,
       height: context.insets.appBarHeight,
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
-      child: Row(
-        children: [
-          Applogo(),
-          Spacer(),
-          AppMenu(),
-          Spacer(),
-          LanguageToggle(),
-          ThemeToggle(),
-        ],
+
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: Insets.maxWidth),
+        child: Row(
+          children: [
+            Applogo(),
+            Spacer(),
+            AppMenu(),
+            Spacer(),
+            LanguageToggle(),
+            ThemeToggle(),
+          ],
+        ),
       ),
     );
   }
