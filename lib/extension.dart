@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_text_styles.dart';
 import 'package:portfolio/l10n/app_localizations.dart';
+import 'package:portfolio/style/app_size.dart';
 
 enum FormFactorType { mobile, tablet, desktop }
 
@@ -30,6 +31,16 @@ extension StyledContext on BuildContext {
         return SmallTextStyles();
       case FormFactorType.desktop:
         return LargeTextStyles();
+    }
+  }
+
+  AppInsets get insets {
+    switch (formFactor) {
+      case FormFactorType.mobile:
+        return smallInsets();
+      case FormFactorType.tablet:
+      case FormFactorType.desktop:
+        return largeInsets();
     }
   }
 
