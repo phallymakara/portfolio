@@ -9,7 +9,7 @@ class MyAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      color: Theme.of(context).appBarTheme.backgroundColor,
+      color: context.theme.appBarTheme.backgroundColor,
       alignment: Alignment.center,
       height: context.insets.appBarHeight,
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
@@ -21,7 +21,7 @@ class MyAppbar extends StatelessWidget {
           children: [
             Applogo(),
             Spacer(),
-            if (context.isDesktop) AppMenu(),
+            if (context.isDesktop) LargeAppMenu(),
             Spacer(),
             LanguageToggle(),
             ThemeToggle(),
@@ -42,8 +42,8 @@ class Applogo extends StatelessWidget {
   }
 }
 
-class AppMenu extends StatelessWidget {
-  const AppMenu({super.key});
+class LargeAppMenu extends StatelessWidget {
+  const LargeAppMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
