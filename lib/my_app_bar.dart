@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_text_styles.dart';
+import 'package:portfolio/extension.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
@@ -24,14 +25,7 @@ class Applogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return Text(
-      'PORTFOLIO',
-      style:
-          width > 600
-              ? LargeTextStyles().titleLgBold
-              : SmallTextStyles().titleLgBold,
-    );
+    return Text('PORTFOLIO', style: context.textStyle.titleLgBold);
   }
 }
 
