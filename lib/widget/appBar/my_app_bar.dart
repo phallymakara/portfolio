@@ -4,6 +4,7 @@ import 'package:portfolio/constant/app_menu_list.dart';
 import 'package:portfolio/extension.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widget/appBar/app_bar_drawer_icon.dart';
+import 'package:portfolio/widget/language_switch.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
@@ -25,7 +26,7 @@ class MyAppbar extends StatelessWidget {
             Spacer(),
             if (context.isDesktop) LargeAppMenu(),
             Spacer(),
-            LanguageToggle(),
+            LanguageSwitch(),
             ThemeToggle(),
             if (!context.isDesktop) AppBarDrawerIcon(),
           ],
@@ -87,22 +88,6 @@ class LargeAppBarMenuItem extends StatelessWidget {
         ),
         child: Text(text, style: SmallTextStyles().bodyLgMedium),
       ),
-    );
-  }
-}
-
-class LanguageToggle extends StatelessWidget {
-  const LanguageToggle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton(
-      itemBuilder: (context) {
-        return [
-          PopupMenuItem(child: Text('English')),
-          PopupMenuItem(child: Text('Khmer')),
-        ];
-      },
     );
   }
 }
