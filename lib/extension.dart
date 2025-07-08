@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_text_styles.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
 enum FormFactorType { mobile, tablet, desktop }
 
@@ -31,4 +32,7 @@ extension StyledContext on BuildContext {
         return LargeTextStyles();
     }
   }
+
+  AppLocalizations get texts =>
+      AppLocalizations.of(this) ?? lookupAppLocalizations(const Locale('en'));
 }

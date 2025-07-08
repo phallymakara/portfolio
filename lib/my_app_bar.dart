@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/app_text_styles.dart';
 import 'package:portfolio/extension.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
@@ -35,7 +36,12 @@ class AppMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Text('Home'), Text('Skills'), Text('Blog'), Text('About Me')],
+      children: [
+        Text(context.texts.home),
+        Text(context.texts.skills),
+        Text(context.texts.blog),
+        Text(context.texts.aboutme),
+      ],
     );
   }
 }
