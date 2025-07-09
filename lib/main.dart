@@ -23,12 +23,17 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      darkTheme: AppTheme.dark,
+      darkTheme: AppTheme(fontFamily: _fontfamily(locale.value)).dark,
+      theme: AppTheme(fontFamily: _fontfamily(locale.value)).light,
       themeMode: ThemeMode.dark,
-      supportedLocales: const [Locale('en'), Locale('kh')],
+      supportedLocales: const [Locale('en'), Locale('km')],
       locale: Locale(locale.value ?? 'en'),
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
+  }
+
+  String _fontfamily(String? locale) {
+    return (locale ?? 'en') == 'en' ? 'Poppins' : 'YongYeang';
   }
 }

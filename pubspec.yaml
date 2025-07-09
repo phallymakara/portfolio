@@ -33,3 +33,16 @@ flutter:
 
   assets:
   - assets/icons/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins.regular.ttf
+        - asset: assets/fonts/poppins.medium.ttf
+        - asset: assets/fonts/poppins.bold.ttf
+    - family: YongYeang
+      fonts:
+        - asset: assets/fonts/Angkor-Regular.ttf
+        # - asset: assets/fonts/Kh Ang PhkayProek.ttf
+        # - asset: assets/fonts/Kh Ang NiTean.ttf
+
