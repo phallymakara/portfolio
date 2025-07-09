@@ -14,15 +14,21 @@ class LanguageSwitch extends StatelessWidget {
       itemBuilder: (context) {
         return [
           PopupMenuItem(
+            value: 1,
             child: PopUpLanguageSwitchItem(
               language: 'English',
               icon: AppIcon.us,
             ),
           ),
           PopupMenuItem(
+            value: 0,
             child: PopUpLanguageSwitchItem(language: 'ខ្មែរ', icon: AppIcon.km),
           ),
         ];
+      },
+      onSelected: (value) {
+        if (value == 0) {
+        } else {}
       },
       child: Row(
         children: [
