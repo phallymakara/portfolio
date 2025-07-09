@@ -11,7 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_riverpod: ^2.6.1
+  flutter_riverpod: any
+  riverpod_annotation: any
   flutter_svg: ^2.2.0
   gap: ^3.0.1
   intl: any
@@ -23,6 +24,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   custom_lint: ^0.7.5
   riverpod_lint: ^2.6.5
+  riverpod_generator: any
+  build_runner: any
 
 flutter:
   generate: true

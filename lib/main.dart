@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/app_locale_controller.dart';
 import 'package:portfolio/home_page.dart';
 import 'package:portfolio/l10n/app_localizations.dart';
-import 'package:portfolio/provider.dart';
 import 'package:portfolio/style/app_theme.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = ref.watch(appLocalProvider);
+    final locale = ref.watch(appLocaleControllerProvider);
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
