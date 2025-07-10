@@ -1,7 +1,8 @@
 class Insets {
   static double get xs => 4;
   static double get med => 12;
-  static double get xl => 32;
+  static double get xl => 24;
+  static double get xxxl => 60;
   static const double maxWidth = 1150;
 }
 
