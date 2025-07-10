@@ -1,44 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/widget/appBar/drawer_menu.dart';
 
-class AppBarDrawerIcon extends StatefulWidget {
+class AppBarDrawerIcon extends ConsumerWidget {
   const AppBarDrawerIcon({super.key});
 
   @override
-  State<AppBarDrawerIcon> createState() => _AppBarDrawerIconState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isOpen = ref.watch(drawerMenuControllerProvider);
 
-class _AppBarDrawerIconState extends State<AppBarDrawerIcon>
-    with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> animation;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 200),
-    );
-    animation = Tween<double>(begin: 0.0, end: 1.0).animate(controller);
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        if (controller.isCompleted) {
-          controller.reverse();
+        if (isOpen) {
+          ref.read(drawerMenuControllerProvider.notifier).close();
         } else {
-          controller.forward();
+          ref.read(drawerMenuControllerProvider.notifier).open();
         }
       },
-      icon: AnimatedIcon(icon: AnimatedIcons.menu_close, progress: animation),
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_close,
+        progress: AlwaysStoppedAnimation(isOpen ? 1.0 : 0.0),
+      ),
     );
   }
 }

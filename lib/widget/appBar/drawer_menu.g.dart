@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_theme_controller.dart';
+part of 'drawer_menu.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appThemeControllerHash() =>
-    r'd9b7c6570049b919247b2246671498fc220b8cbc';
+String _$drawerMenuControllerHash() =>
+    r'f06a9a20743e65ad582597d3c38abe6abe51dd4c';
 
-/// See also [AppThemeController].
-@ProviderFor(AppThemeController)
-final appThemeControllerProvider =
-    AutoDisposeAsyncNotifierProvider<AppThemeController, ThemeMode>.internal(
-      AppThemeController.new,
-      name: r'appThemeControllerProvider',
+/// See also [DrawerMenuController].
+@ProviderFor(DrawerMenuController)
+final drawerMenuControllerProvider =
+    AutoDisposeNotifierProvider<DrawerMenuController, bool>.internal(
+      DrawerMenuController.new,
+      name: r'drawerMenuControllerProvider',
       debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
           ? null
-          : _$appThemeControllerHash,
+          : _$drawerMenuControllerHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );
 
-typedef _$AppThemeController = AutoDisposeAsyncNotifier<ThemeMode>;
+typedef _$DrawerMenuController = AutoDisposeNotifier<bool>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
