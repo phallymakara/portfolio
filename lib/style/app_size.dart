@@ -6,7 +6,7 @@ class Insets {
   static double get xl => 24;
   static double get xxl => 34;
   static double get xxxl => 60;
-  static const double maxWidth = 1150;
+  static const double maxWidth = 1100;
 }
 
 abstract class AppInsets {

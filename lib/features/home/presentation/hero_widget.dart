@@ -40,7 +40,7 @@ class _smallHero extends StatelessWidget {
 }
 
 class _largeHero extends StatelessWidget {
-  const _largeHero({super.key});
+  const _largeHero();
 
   @override
   Widget build(BuildContext context) {

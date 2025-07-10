@@ -11,39 +11,46 @@ class CoursesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: AspectRatio(
         aspectRatio: 0.7,
-        child: Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 0.5,
-              child: ClipRRect(
-                child: Image.network(
-                  'https://dummyimage.com/350x250/33cc99/fff',
-                  fit: BoxFit.cover,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AspectRatio(
+                aspectRatio: 1.6,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    'https://dummyimage.com/350x250/33cc99/fff',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            const Gap(24),
-            SEOtext(
-              'Random text',
-              style: context.textStyle.bodyLgBold.copyWith(
-                color: context.colorScheme.onBackground,
-              ),
-              textRendererStyle: TextRendererStyle.header4,
-            ),
-            const Gap(8),
-            Expanded(
-              child: SEOtext(
-                'Some Description Text for Testing',
-                style: context.textStyle.bodyMdMedium.copyWith(
-                  color: context.colorScheme.onSurface,
+              const Gap(16),
+              SEOtext(
+                'Course Title Here',
+                style: context.textStyle.bodyLgBold.copyWith(
+                  color: context.colorScheme.onBackground,
                 ),
-                maxLines: 4,
-                overflow: TextOverflow.ellipsis,
+                textRendererStyle: TextRendererStyle.header3,
               ),
-            ),
-          ],
+              const Gap(8),
+              Expanded(
+                child: SEOtext(
+                  'This is a short description of the course content. It should be concise and clear to attract users.',
+                  style: context.textStyle.bodyMdMedium.copyWith(
+                    color: context.colorScheme.onSurface,
+                  ),
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
