@@ -104,6 +104,30 @@ abstract class AppLocalizations {
   /// **'PHALLYMAKARA'**
   String get applogo;
 
+  /// No description provided for @hero_name.
+  ///
+  /// In en, this message translates to:
+  /// **'PHALLYMAKARA'**
+  String get hero_name;
+
+  /// No description provided for @hero_major.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Science || Flutter Developer'**
+  String get hero_major;
+
+  /// No description provided for @hero_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Science & Engineering student at the Institute of Technology of Cambodia with hands-on experience in Python, SQL, and BI tools like Power BI and Tableau. Skilled in data scraping, ETL, and machine learning. Passionate about using data to drive insights and support smart decision-making in Data Engineering or Business Intelligence roles.'**
+  String get hero_desc;
+
+  /// No description provided for @contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Me'**
+  String get contact;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:

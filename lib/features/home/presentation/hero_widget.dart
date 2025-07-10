@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:portfolio/extension.dart';
+import 'package:portfolio/features/home/presentation/hero_button.dart';
+import 'package:portfolio/features/home/presentation/hero_image.dart';
+import 'package:portfolio/features/home/presentation/hero_texts.dart';
+import 'package:portfolio/style/app_size.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key});
@@ -8,7 +13,6 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('flutter'),
         context.isDesktop || context.isTablet ? _largeHero() : _smallHero(),
       ],
     );
@@ -16,11 +20,22 @@ class HeroWidget extends StatelessWidget {
 }
 
 class _smallHero extends StatelessWidget {
-  const _smallHero({super.key});
+  const _smallHero();
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 140),
+          child: HeroImage(),
+        ),
+        Gap(Insets.xl),
+        const HeroTexts(),
+        Gap(Insets.xxl),
+        smallHeroButton(),
+      ],
+    );
   }
 }
 
@@ -29,6 +44,21 @@ class _largeHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        Expanded(child: const HeroImage()),
+        Gap(Insets.xxl),
+        Expanded(
+          flex: 2,
+          child: Column(
+            children: [
+              const HeroTexts(),
+              Gap(Insets.xl),
+              const LargeHeroButton(),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

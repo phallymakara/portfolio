@@ -17,6 +17,7 @@ dependencies:
   gap: ^3.0.1
   intl: any
   shared_preferences: ^2.5.3
+  seo_renderer: ^0.6.0
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +34,7 @@ flutter:
 
   assets:
   - assets/icons/
+  - assets/images/
 
   fonts:
     - family: Poppins

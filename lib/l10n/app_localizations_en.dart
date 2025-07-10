@@ -12,6 +12,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get applogo => 'PHALLYMAKARA';
 
   @override
+  String get hero_name => 'PHALLYMAKARA';
+
+  @override
+  String get hero_major => 'Data Science || Flutter Developer';
+
+  @override
+  String get hero_desc =>
+      'Data Science & Engineering student at the Institute of Technology of Cambodia with hands-on experience in Python, SQL, and BI tools like Power BI and Tableau. Skilled in data scraping, ETL, and machine learning. Passionate about using data to drive insights and support smart decision-making in Data Engineering or Business Intelligence roles.';
+
+  @override
+  String get contact => 'Contact Me';
+
+  @override
   String get home => 'Home';
 
   @override
