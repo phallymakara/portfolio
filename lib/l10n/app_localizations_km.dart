@@ -9,6 +9,9 @@ class AppLocalizationsKm extends AppLocalizations {
   AppLocalizationsKm([String locale = 'km']) : super(locale);
 
   @override
+  String get applogo => 'ផល្លី មករា';
+
+  @override
   String get home => 'ទំព័រដើម';
 
   @override

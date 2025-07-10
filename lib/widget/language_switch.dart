@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio/app_locale_controller.dart';
+import 'package:portfolio/shared/app_locale_controller.dart';
 import 'package:portfolio/constant/app_icon.dart';
 import 'package:portfolio/extension.dart';
 import 'package:portfolio/widget/seo_text.dart';

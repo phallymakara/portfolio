@@ -98,6 +98,12 @@ abstract class AppLocalizations {
     Locale('km'),
   ];
 
+  /// No description provided for @applogo.
+  ///
+  /// In en, this message translates to:
+  /// **'PHALLYMAKARA'**
+  String get applogo;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:

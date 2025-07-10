@@ -50,7 +50,7 @@ class LargeTextStyles extends AppTextStyles {
 
   @override
   TextStyle get titleLgBold =>
-      const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
   @override
   TextStyle get titleMdMedium =>

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/app_locale_controller.dart';
+import 'package:portfolio/shared/app_locale_controller.dart';
 import 'package:portfolio/home_page.dart';
 import 'package:portfolio/l10n/app_localizations.dart';
+import 'package:portfolio/shared/app_theme_controller.dart';
 import 'package:portfolio/style/app_theme.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(appLocaleControllerProvider);
+    final theme = ref.watch(appThemeControllerProvider);
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -25,7 +27,7 @@ class MyApp extends ConsumerWidget {
       ],
       darkTheme: AppTheme(fontFamily: _fontfamily(locale.value)).dark,
       theme: AppTheme(fontFamily: _fontfamily(locale.value)).light,
-      themeMode: ThemeMode.dark,
+      themeMode: theme.value,
       supportedLocales: const [Locale('en'), Locale('km')],
       locale: Locale(locale.value ?? 'en'),
       home: const HomePage(),

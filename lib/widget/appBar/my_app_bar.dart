@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/app_text_styles.dart';
 import 'package:portfolio/constant/app_menu_list.dart';
 import 'package:portfolio/extension.dart';
+import 'package:portfolio/shared/app_theme_controller.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widget/appBar/app_bar_drawer_icon.dart';
 import 'package:portfolio/widget/language_switch.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({super.key});
@@ -41,7 +43,7 @@ class Applogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('PORTFOLIO', style: context.textStyle.titleLgBold);
+    return Text(context.texts.applogo, style: context.textStyle.titleLgBold);
   }
 }
 
@@ -92,11 +94,20 @@ class LargeAppBarMenuItem extends StatelessWidget {
   }
 }
 
-class ThemeToggle extends StatelessWidget {
+class ThemeToggle extends ConsumerWidget {
   const ThemeToggle({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Switch(value: false, onChanged: (value) {});
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(appThemeControllerProvider);
+
+    return Switch(
+      value: state.value == ThemeMode.dark,
+      onChanged: (value) {
+        ref
+            .read(appThemeControllerProvider.notifier)
+            .changeTheme(value ? ThemeMode.dark : ThemeMode.light);
+      },
+    );
   }
 }
