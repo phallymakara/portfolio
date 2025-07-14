@@ -18,6 +18,7 @@ dependencies:
   intl: any
   shared_preferences: ^2.5.3
   seo_renderer: ^0.6.0
+  dotted_line: ^3.2.3
 
 dev_dependencies:
   flutter_test:
