@@ -28,7 +28,13 @@ class AppLocalizationsKm extends AppLocalizations {
   String get courses => 'ចំណងជើងមេរៀន';
 
   @override
-  String get courseDescription => 'នេះគឺជាមេរៀនសម្រាយ';
+  String get courseDescription => 'បរិយាយមេរៀន';
+
+  @override
+  String get experieces => 'បទពិសោធន៍';
+
+  @override
+  String get experiecesDescription => 'បរិយាយបទពិសោធន៍';
 
   @override
   String get home => 'ទំព័រដើម';

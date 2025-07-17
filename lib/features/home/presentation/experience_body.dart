@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extension.dart';
+import 'package:portfolio/widget/home_title_subtitle.dart';
 import 'package:portfolio/widget/styled_card.dart';
 
 const explen = 6;
@@ -15,7 +16,48 @@ class ExperienceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DesktopExperiencesBody();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        HomeTitleSubtitle(
+          title: context.texts.experieces,
+          subtitle: context.texts.experiecesDescription,
+        ),
+        const Gap(32),
+        context.isDesktop ? DesktopExperiencesBody() : PhoneExperienceBody(),
+      ],
+    );
+  }
+}
+
+class PhoneExperienceBody extends StatelessWidget {
+  const PhoneExperienceBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+        ],
+      ),
+    );
   }
 }
 
