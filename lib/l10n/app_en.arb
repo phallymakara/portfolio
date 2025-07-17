@@ -4,6 +4,8 @@
         "hero_major": "Data Science || Flutter Developer",
         "hero_desc" : "Data Science & Engineering student at the Institute of Technology of Cambodia with hands-on experience in Python, SQL, and BI tools like Power BI and Tableau. Skilled in data scraping, ETL, and machine learning. Passionate about using data to drive insights and support smart decision-making in Data Engineering or Business Intelligence roles.",
         "contact": "Contact Me",
+        "courses": "courses title",
+        "courseDescription": "This is a course description.",
         "home": "Home",
         "skills": "Skills",
         "blog": "Blog",

@@ -128,6 +128,18 @@ abstract class AppLocalizations {
   /// **'Contact Me'**
   String get contact;
 
+  /// No description provided for @courses.
+  ///
+  /// In en, this message translates to:
+  /// **'courses title'**
+  String get courses;
+
+  /// No description provided for @courseDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a course description.'**
+  String get courseDescription;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:
