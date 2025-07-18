@@ -168,6 +168,7 @@ class ExperienceItem extends StatelessWidget {
     return StyledCard(
       width: expWidth,
       height: expHeight,
+      borderEffect: true,
       child: Column(
         children: [
           Text(
