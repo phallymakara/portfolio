@@ -152,6 +152,18 @@ abstract class AppLocalizations {
   /// **'experiecesDescription'**
   String get experiecesDescription;
 
+  /// No description provided for @testimonies.
+  ///
+  /// In en, this message translates to:
+  /// **'testimonies'**
+  String get testimonies;
+
+  /// No description provided for @testimoniesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'testimoniesDescription'**
+  String get testimoniesDescription;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:

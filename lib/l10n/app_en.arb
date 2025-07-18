@@ -8,6 +8,8 @@
         "courseDescription": "This is a course description.",
         "experieces":"experieces",
         "experiecesDescription": "experiecesDescription",
+        "testimonies":"testimonies",
+        "testimoniesDescription":"testimoniesDescription",
         "home": "Home",
         "skills": "Skills",
         "blog": "Blog",

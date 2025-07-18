@@ -37,6 +37,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get experiecesDescription => 'បរិយាយបទពិសោធន៍';
 
   @override
+  String get testimonies => 'ចំណាប់អារម្មណ៍';
+
+  @override
+  String get testimoniesDescription => 'បរិយាយចំណាប់អារម្មណ៍';
+
+  @override
   String get home => 'ទំព័រដើម';
 
   @override

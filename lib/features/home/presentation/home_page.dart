@@ -8,6 +8,7 @@ import 'package:portfolio/features/home/presentation/testimoni_list.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widget/appBar/my_app_bar.dart';
 import 'package:portfolio/widget/background_blur.dart';
+import 'package:portfolio/widget/home_title_subtitle.dart';
 import 'package:portfolio/widget/my_footer.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,7 +40,19 @@ class HomePage extends StatelessWidget {
                   SliverGap(context.insets.gap),
                   SliverToBoxAdapter(child: ExperienceBody()),
                   SliverGap(context.insets.gap),
-                  TestimoniList(),
+                  SliverToBoxAdapter(
+                    child: HomeTitleSubtitle(
+                      title: context.texts.testimonies,
+                      subtitle: context.texts.testimoniesDescription,
+                    ),
+                  ),
+                  const SliverGap(32),
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.insets.padding,
+                    ),
+                    sliver: TestimoniList(),
+                  ),
                   SliverToBoxAdapter(child: MyFooter()),
                 ],
               ),

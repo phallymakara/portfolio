@@ -37,6 +37,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get experiecesDescription => 'experiecesDescription';
 
   @override
+  String get testimonies => 'testimonies';
+
+  @override
+  String get testimoniesDescription => 'testimoniesDescription';
+
+  @override
   String get home => 'Home';
 
   @override
