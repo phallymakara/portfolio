@@ -13,5 +13,7 @@
         "home": "Home",
         "skills": "Skills",
         "blog": "Blog",
-        "aboutme": "About Me"
+        "aboutme": "About Me",
+        "aboutTitle":"aboutTitle",
+        "aboutDescription":"aboutDescription"
 }

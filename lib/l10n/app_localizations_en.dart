@@ -53,4 +53,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutme => 'About Me';
+
+  @override
+  String get aboutTitle => 'aboutTitle';
+
+  @override
+  String get aboutDescription => 'aboutDescription';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/app_text_styles.dart';
 import 'package:portfolio/constant/app_menu_list.dart';
 import 'package:portfolio/extension.dart';
@@ -64,8 +65,10 @@ class LargeAppMenu extends StatelessWidget {
               .map(
                 (AppMenu e) => LargeAppBarMenuItem(
                   text: e.title,
-                  isSelected: true,
-                  onTap: () {}, // you can update this to navigate
+                  isSelected: GoRouterState.of(context).fullPath == e.path,
+                  onTap: () {
+                    GoRouter.of(context).go(e.path);
+                  }, // you can update this to navigate
                 ),
               )
               .toList(),
@@ -84,8 +87,10 @@ class smallMenu extends StatelessWidget {
               .map(
                 (AppMenu e) => LargeAppBarMenuItem(
                   text: e.title,
-                  isSelected: true,
-                  onTap: () {}, // you can update this to navigate
+                  isSelected: GoRouterState.of(context).fullPath == e.path,
+                  onTap: () {
+                    GoRouter.of(context).go(e.path);
+                  }, // you can update this to navigate
                 ),
               )
               .toList(),
@@ -114,7 +119,15 @@ class LargeAppBarMenuItem extends StatelessWidget {
           horizontal: Insets.med,
           vertical: Insets.xs,
         ),
-        child: Text(text, style: SmallTextStyles().bodyLgMedium),
+        child: Text(
+          text,
+          style: SmallTextStyles().bodyLgMedium.copyWith(
+            color:
+                isSelected
+                    ? context.colorScheme.onBackground
+                    : context.colorScheme.onSurfaceVariant,
+          ),
+        ),
       ),
     );
   }

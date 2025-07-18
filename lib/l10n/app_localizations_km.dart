@@ -53,4 +53,10 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get aboutme => 'អំពីខ្ញុំ';
+
+  @override
+  String get aboutTitle => 'ចំណងជើងអំពីខ្ញុំ';
+
+  @override
+  String get aboutDescription => 'សម្រាយអំពីខ្ញុំ';
 }
